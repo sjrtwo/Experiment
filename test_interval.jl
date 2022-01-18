@@ -18,10 +18,7 @@ s_abortmsg = "Program test_interval ended unsuccessfully."
 nlinesread, nlineswritten, prevline = 0, 0, " "
 
 x = Interval(0, 10, 1)
-validate_interval(x)
 x2 = Interval(10, 1, 1)
-validate_interval(x2)
-@printf("x = %s\n", x)
 
 # Write a diagnostic summary
 
