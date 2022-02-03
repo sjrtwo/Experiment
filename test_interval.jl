@@ -18,7 +18,9 @@ s_abortmsg = "Program test_interval ended unsuccessfully."
 nlinesread, nlineswritten, prevline = 0, 0, " "
 
 x = Interval(0, 10, 1)
-x2 = Interval(10, 1, 1)
+show(generate(x)); println()
+x2 = Interval(-1, 1, 0.125)
+show(generate(x2)); println()
 
 # Write a diagnostic summary
 

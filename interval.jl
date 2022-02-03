@@ -37,3 +37,8 @@ struct Interval
         throw_arg_err(low, high, delta) :
         new(low, high, delta)
 end
+
+function generate(parm_interval::Interval)
+    return range(parm_interval.low, parm_interval.high,
+                 step=parm_interval.delta)
+end
