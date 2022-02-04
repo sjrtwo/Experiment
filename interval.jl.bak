@@ -1,6 +1,6 @@
 #=  Name:       interval.jl
     Programmer: Steve Rock
- 	Date:		02/04/2021
+ 	Date:		01/09/2021
  	Comments:	This file defines structures and functions
 				that will be used to set up an interval type.
 =#
@@ -32,13 +32,13 @@ struct Interval
     low::Number
     high::Number
     delta::Number
-    itr_range:: AbstractRange
     Interval(low, high, delta) =
       low > high || delta > (high - low) ?
         throw_arg_err(low, high, delta) :
-        new(low, high, delta, range(low, high, step=delta))
+        new(low, high, delta)
 end
 
 function generate(parm_interval::Interval)
-    return parm_interval.itr_range
+    return range(parm_interval.low, parm_interval.high,
+                 step=parm_interval.delta)
 end
